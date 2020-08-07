@@ -15,7 +15,7 @@ services:
     networks:
       - backend
   grafana:
-    image: grafana/grafana:exemplars-demo
+    image: grafana/grafana:trace-diff-demo
     expose:
       - "3000"
     ports:
@@ -28,8 +28,8 @@ services:
     networks:
       - backend
   hotrod:
-    image: jaeger-example:exemplars-demo
-    ports: 
+    image: jaeger-example:trace-diff-demo
+    ports:
       - "8080:8080"
       - "8083:8083"
     command: ["all"]
@@ -51,7 +51,7 @@ services:
     networks:
       - backend
   m3dbnode:
-    image: m3dbnode:exemplars-demo
+    image: m3dbnode:trace-diff-demo
     expose:
       - "7201"
       - "7203"

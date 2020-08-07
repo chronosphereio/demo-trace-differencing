@@ -1,17 +1,17 @@
 build_hotrod:
 	cd jaeger-example && make hotrod-docker && \
-	docker tag jaeger-example:latest jaeger-example:exemplars-demo
+	docker tag jaeger-example:latest jaeger-example:trace-diff-demo
 
 build_prometheus: 
 	cd prometheus && GOOS=linux GOARCH=amd64 make build && mkdir -p .build/linux-amd64 &&  \
 	mv ./prometheus ./.build/linux-amd64/prometheus && mv ./promtool ./.build/linux-amd64/promtool && make docker
 
 build_m3: 
-	cd m3 && docker build -t m3dbnode:exemplars-demo -f ./docker/m3dbnode/Dockerfile .
+	cd m3 && docker build -t m3dbnode:trace-diff-demo -f ./docker/m3dbnode/Dockerfile .
 
 build_grafana:
 	cd grafana && make build-docker-full && \
-	docker tag grafana/grafana:dev grafana/grafana:exemplars-demo
+	docker tag grafana/grafana:dev grafana/grafana:trace-diff-demo
 
 build_all: build_hotrod build_prometheus build_m3 build_grafana
 

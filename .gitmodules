@@ -1,7 +1,7 @@
 [submodule "grafana"]
 	path = grafana
 	url = https://github.com/chronosphereiox/grafana
-	branch = gg/traceid-support-kubecon
+	branch = trace-diffing
 [submodule "prometheus"]
 	path = prometheus
 	url = https://github.com/chronosphereiox/prometheus
@@ -12,4 +12,5 @@
 	branch = kubecon_demo
 [submodule "jaeger-example"]
 	path = jaeger-example
+	branch = trace-diffing
 	url = https://github.com/chronosphereiox/jaeger-example.git
